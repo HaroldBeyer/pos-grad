@@ -1,9 +1,6 @@
 import { randomUUID } from 'crypto'
 import dynamoose, { Schema } from 'dynamoose'
 
-// type GameRatingDataSchema = GameRating
-// type GameRatingKeySchema = Pick<GameRating, 'id'>
-
 const schema = {
     id: {
         type: String,
