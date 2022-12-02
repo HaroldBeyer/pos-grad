@@ -27,7 +27,7 @@ provider:
         - dynamodb:GetShardIterator
         - dynamodb:ListStreams
         - dynamodb:Scan
-      Resource: 'arn:aws:dynamodb:us-east-1:529198180535:table/pos_grad'
+      Resource: 'arn:aws:dynamodb:us-east-1:529198180535:table/*'
 
 functions:
   insertGameRating:
