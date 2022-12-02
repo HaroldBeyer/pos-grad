@@ -1,0 +1,24 @@
+{
+  "name": "pos-grad",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HaroldBeyer/pos-grad.git",
+  "author": "Haroldo <haroldobeyerbacellar@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-lambda": "^1.0.7",
+    "dynamoose": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.109",
+    "@types/node": "^18.11.9",
+    "rimraf": "^3.0.2",
+    "serverless-offline": "^11.6.0",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "sls offline",
+    "deploy": "yarn build && sls deploy"
+  }
+}
