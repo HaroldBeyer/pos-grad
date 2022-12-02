@@ -37,3 +37,10 @@ functions:
           path: gameRating
           method: POST
           cors: true
+  insertGame:
+    handler: build/functions/insertGame.lambdaHandler
+    events:
+      - http:
+          path: game
+          method: POST
+          cors: true
