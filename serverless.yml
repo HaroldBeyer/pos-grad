@@ -34,13 +34,20 @@ functions:
     handler: build/functions/insertGameRating.lambdaHandler
     events:
       - http:
-          path: gameRating
+          path: gameRatings
           method: POST
           cors: true
   insertGame:
     handler: build/functions/insertGame.lambdaHandler
     events:
       - http:
-          path: game
+          path: games
+          method: POST
+          cors: true
+  insertGameGenre:
+    handler: build/functions/insertGenre.lambdaHandler
+    events:
+      - http:
+          path: genres
           method: POST
           cors: true
