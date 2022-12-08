@@ -11,6 +11,14 @@ provider:
   timeout: 30
   memorySize: 128
   region: us-east-1
+  httpApi:
+    authorizers:
+      posAuthorizer:
+        type: jwt
+        identitySource: $request.header.Authorization
+        issuerUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_0G3NcXKer
+        audience:
+          - 4k3ub24m787kj5ot9jjp44ts9f
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -33,21 +41,27 @@ functions:
   insertGameRating:
     handler: build/functions/insertGameRating.lambdaHandler
     events:
-      - http:
-          path: gameRatings
+      - httpApi:
+          path: /gameRatings
           method: POST
           cors: true
+          authorizer:
+            name: posAuthorizer
   insertGame:
     handler: build/functions/insertGame.lambdaHandler
     events:
-      - http:
-          path: games
+      - httpApi:
+          path: /games
           method: POST
           cors: true
+          authorizer:
+            name: posAuthorizer
   insertGameGenre:
     handler: build/functions/insertGenre.lambdaHandler
     events:
-      - http:
-          path: genres
+      - httpApi:
+          path: /genres
           method: POST
           cors: true
+          authorizer:
+            name: posAuthorizer
