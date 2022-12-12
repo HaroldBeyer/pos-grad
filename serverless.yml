@@ -16,9 +16,10 @@ provider:
       posAuthorizer:
         type: jwt
         identitySource: $request.header.Authorization
-        issuerUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_0G3NcXKer
+        issuerUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_yHEMdh0El
         audience:
-          - 4k3ub24m787kj5ot9jjp44ts9f
+          - 2dm057aiuslap1nu6g71a62176
+          - 4ubpsra0l516kc2kkskcc9bmh2
   iamRoleStatements:
     - Effect: Allow
       Action:
