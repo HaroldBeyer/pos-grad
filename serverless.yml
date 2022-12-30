@@ -66,3 +66,39 @@ functions:
           cors: true
           authorizer:
             name: posAuthorizer
+  likeGame:
+    handler: build/functions/likeGame.lambdaHandler
+    events:
+      - httpApi:
+          path: /games/like
+          method: POST
+          cors: true
+          authorizer:
+            name: posAuthorizer
+  insertGameList:
+    handler: build/functions/insertGameList.lambdaHandler
+    events:
+      - httpApi:
+          path: /games/list
+          method: PUT
+          cors: true
+          authorizer:
+            name: posAuthorizer
+  getGames:
+    handler: build/functions/getGames.lambdaHandler
+    events:
+      - httpApi:
+          path: /games
+          method: GET
+          cors: true
+          authorizer:
+            name: posAuthorizer
+  getLists:
+    handler: build/functions/getLists.lambdaHandler
+    events:
+      - httpApi:
+          path: /games/list
+          method: GET
+          cors: true
+          authorizer:
+            name: posAuthorizer

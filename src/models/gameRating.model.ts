@@ -22,7 +22,7 @@ const schema = {
     },
     comment: {
         type: String,
-        required: true,
+        required: false,
     }
 }
 
