@@ -102,3 +102,12 @@ functions:
           cors: true
           authorizer:
             name: posAuthorizer
+  insertUser:
+    handler: build/functions/insertUser.lambdaHandler
+    events:
+      - httpApi:
+          path: /users
+          method: PUT
+          cors: true
+          authorizer:
+            name: posAuthorizer
